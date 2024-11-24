@@ -1,3 +1,5 @@
 .visDivContainer{
-    height: 100%;
+    margin: auto;
+    height: 50vh;
+    width: 90vw;
 }
