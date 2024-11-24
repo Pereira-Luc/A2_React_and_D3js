@@ -1,12 +1,14 @@
 import './App.css';
 import { useEffect} from 'react';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { getSeoulBikeData } from './redux/DataSetSlice';
 
 // here import other dependencies
 
 // a component is a piece of code which render a part of the user interface
 function App() {
+  const bikeData = useSelector(state => state.dataSet);
+
   const dispatch = useDispatch();
   useEffect(()=>{
     console.log("App useEffect");
