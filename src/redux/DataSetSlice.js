@@ -13,19 +13,34 @@ export const getSeoulBikeData = createAsyncThunk('seoulBikeData/fetchData', asyn
 
 export const dataSetSlice = createSlice({
   name: 'dataSet',
-  initialState: [],
+  initialState: {
+      data : [],
+      selectedItem: [],
+      lastSelector: null,
+      reset : false
+  },
   reducers: {
-      // add reducer if needed
+      updateSelectedItem: (state, action) => {
+            state.selectedItem = action.payload;
+      },
+      updateLastSelector: (state, action) => {
+            state.lastSelector = action.payload;
+      },
+      resetData: (state, action) => {
+            state.reset = action.payload;
+      }
   },
   extraReducers: builder => {
     builder.addCase(getSeoulBikeData.fulfilled, (state, action) => {
       // Add any fetched house to the array
-      return action.payload
+        state.data = action.payload;
     })
   }
 })
 
 // Action creators are generated for each case reducer function
 export const { updateSelectedItem } = dataSetSlice.actions
+export const { updateLastSelector } = dataSetSlice.actions
+export const { resetData } = dataSetSlice.actions
 
 export default dataSetSlice.reducer

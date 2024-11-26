@@ -6,7 +6,10 @@
     height: 10%;
 }
 #view-container{
-    height:80%;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
 }
 .row:after {
     content: "";
@@ -16,4 +19,14 @@
 .col2{
     float: left;
     width: 50%;
+}
+
+.box {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 0px;
+    height: 60vh;
+    width: 50vw;
+    overflow: hidden;
 }

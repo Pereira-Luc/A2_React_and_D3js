@@ -30,6 +30,7 @@ function VisContainer(){
             height=divContainerRef.current.offsetHeight;
             // height = '100%';
         }
+        console.log("getCharSize",width,height);
         return {width:width,height:height};
     }
 

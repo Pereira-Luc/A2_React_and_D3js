@@ -1,31 +1,21 @@
 import './App.css';
-import { useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import { getSeoulBikeData } from './redux/DataSetSlice';
+import ScatterPlot from "./components/plots/ScatterPlot";
+
+import ParallelCoordinatesPlot from "./components/plots/ParallelCoordinatesPlot";
+import TaskBar from './components/taskBar/TaskBar';
 
 // here import other dependencies
 
 // a component is a piece of code which render a part of the user interface
 function App() {
-  const bikeData = useSelector(state => state.dataSet);
-
-  const dispatch = useDispatch();
-  useEffect(()=>{
-    console.log("App useEffect");
-  })
-
-  // called once the component did mount
-  useEffect(()=>{
-    // initialize the data from file
-    dispatch(getSeoulBikeData());
-  },[])
 
   return (
     <div className="App">
-        {console.log("App rendering")}
+      {console.log("App rendering")}
+      <TaskBar />
         <div id="view-container" className="row">
-          {/*<ScatterplotContainer/>*/}
-          {/* <YourVisContainer/> */}
+          <ScatterPlot />
+          <ParallelCoordinatesPlot />
         </div>
     </div>
   );

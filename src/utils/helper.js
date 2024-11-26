@@ -18,3 +18,9 @@ export function getDefaultFontSize (){
     const result = Number(widthMatch[0]);
     return !isNaN(result) ? result : null;
 };
+
+// Enum for last selecter
+export const plotTypes = {
+    SCATTER_PLOT: 'scatter',
+    PARALLEL_COORDINATES: 'parallel',
+}
